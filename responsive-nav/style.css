@@ -22,7 +22,7 @@ body {
 
 /* use psuedoselector for scrollbar (not supported by all browsers) */
 body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 1rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -40,20 +40,9 @@ main {
 }
 
 .navbar {
-  width: 5rem;
-  height: 100vh;
   position: fixed;
   background-color: var(--bg-primary);
   transition: width 200ms ease;
-}
-
-.navbar:hover {
-  width: 16rem;
-}
-
-/* show the link text on hover */
-.navbar:hover .link-text {
-  display: block;
 }
 
 .navbar-nav {
@@ -137,4 +126,48 @@ main {
 
 .navbar:hover .logo svg {
   transform: rotate(-180deg);
+}
+
+/* small screens (mobile) */
+@media only screen and (max-width: 600px) {
+  /* move the nav bar to the bottom from mobile */
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
 }
