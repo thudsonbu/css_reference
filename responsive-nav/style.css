@@ -1,0 +1,54 @@
+:root {
+  font-size: 16;
+  font-family: 'Open Sans';
+
+  /* set global colors */
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+}
+
+body {
+  color: black;
+  background-color: white;
+
+  /* normalize */
+  margin: 0;
+  padding: 0;
+}
+
+/* use psuedoselector for scrollbar (not supported by all browsers) */
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+/* thumb refers to the bar on the slider */
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+.navbar {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--bg-primary);
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
